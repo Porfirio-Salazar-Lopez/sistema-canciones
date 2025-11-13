@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package modelos;
+package modelo;
 
-/**
- *
- * @author porfi
- */
 public class Cancion {
     private int id;
-    private int userId;  // Clavee
+    private int userId;  // Clave
     private String titulo;
     private String artista;
 
@@ -50,3 +42,4 @@ public class Cancion {
         return "[" + id + "] 🎵 " + titulo + " - " + artista;
     }
 }
+

@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package modelos;
-
-/**
- *
- * @author porfi
- */
+package modelo;
 
 public class Usuario {
     private int id;
@@ -32,3 +23,4 @@ public class Usuario {
         return password;
     }
 }
+

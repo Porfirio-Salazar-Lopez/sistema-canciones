@@ -1,18 +1,16 @@
+package gestor;
+
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 import java.io.*;
 import java.util.*;
 import modelo.*;
-package gestion;
-/**
- *
- * @author porfi
- */
+
 public class GestorUsuarios {
     private static final String FILE_PATH = "usuarios.json";
     private static final Gson gson = new Gson();
-    
-        public static List<Usuario> cargarUsuarios() {
+
+    public static List<Usuario> cargarUsuarios() {
         try (Reader reader = new FileReader(FILE_PATH)) {
             return gson.fromJson(reader, new TypeToken<List<Usuario>>(){}.getType());
         } catch (IOException e) {
@@ -27,8 +25,8 @@ public class GestorUsuarios {
             System.out.println("Error guardando usuarios: " + e.getMessage());
         }
     }
-    
-        public static Usuario login(String nombre, String password) {
+
+    public static Usuario login(String nombre, String password) {
         List<Usuario> usuarios = cargarUsuarios();
         for (Usuario u : usuarios) {
             if (u.getNombre().equals(nombre) && u.getPassword().equals(password)) {
@@ -46,6 +44,5 @@ public class GestorUsuarios {
         guardarUsuarios(usuarios);
         return nuevo;
     }
-
-
 }
+

@@ -1,21 +1,16 @@
+package gestor;
+
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 import java.io.*;
 import java.util.*;
 import modelo.*;
 
-package gestion;
-
-/**
- *
- * @author porfi
- */
-
 public class GestorCanciones {
     private static final String FILE_PATH = "canciones.json";
     private static final Gson gson = new Gson();
-    
-        public static List<Cancion> cargarCanciones() {
+
+    public static List<Cancion> cargarCanciones() {
         try (Reader reader = new FileReader(FILE_PATH)) {
             return gson.fromJson(reader, new TypeToken<List<Cancion>>(){}.getType());
         } catch (IOException e) {
@@ -30,8 +25,6 @@ public class GestorCanciones {
             System.out.println("Error guardando canciones: " + e.getMessage());
         }
     }
-    
-    
 
     public static List<Cancion> obtenerCancionesUsuario(int userId) {
         List<Cancion> todas = cargarCanciones();
@@ -72,3 +65,4 @@ public class GestorCanciones {
         return false;
     }
 }
+
